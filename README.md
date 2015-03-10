@@ -1,6 +1,8 @@
 # unique-s3-uploader
 Client-side S3 CORS uploader for Amazon S3 using server side defined unique file names and file types using signed upload urls.
 
+At Moniker, we use this module when we need to collect data from website visitors for crowd-sourcing purposes. Having clients upload their data directly to S3 saves us from having to worry about scaling issues when thousands of people are uploading data at the same time. All our server needs to do is create a signed upload url, the clients do the rest.
+
 ## Bucket settings
 You will need to set up your s3 bucket's CORS Configuration to:
 ```
