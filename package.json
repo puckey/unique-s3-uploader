@@ -1,0 +1,22 @@
+{
+  "name": "unique-s3-uploader",
+  "version": "0.0.0",
+  "description": "Upload files with unique filenames from the client to Amazon S3",
+  "main": "UniqueS3Uploader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathan Puckey (Moniker)",
+  "license": "MIT",
+  "dependencies": {
+    "babelify": "^5.0.4",
+    "gulp": "^3.8.11",
+    "gulp-livereload": "^3.8.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0",
+    "superagent": "^0.21.0",
+    "vinyl-buffer": "^1.0.0",
+    "watchify": "^2.4.0"
+  }
+}
