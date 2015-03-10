@@ -10,8 +10,8 @@ var buffer = require('vinyl-buffer');
 // Hack to enable configurable watchify watching
 var watching = false
 
-gulp.task('php-test', watchify(function (watchify) {
-  return gulp.src('./php-test/www/index.js')
+gulp.task('example', watchify(function (watchify) {
+  return gulp.src('./php-example/www/index.js')
     .pipe(plumber())
     .pipe(watchify({
       debug: true,
@@ -20,12 +20,12 @@ gulp.task('php-test', watchify(function (watchify) {
         bundle.transform(babelify)
       }
     }))
-    .pipe(gulp.dest('./php-test/www/dist/'))
+    .pipe(gulp.dest('./php-example/www/dist/'))
     .pipe(buffer())
     .pipe(uglify())
     .pipe(rename(function (path) {
         path.basename += '-min';
     }))
-    .pipe(gulp.dest('./php-test/www/dist/'))
+    .pipe(gulp.dest('./php-example/www/dist/'))
     .pipe(livereload())
 }));
