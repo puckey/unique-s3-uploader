@@ -2,7 +2,7 @@
 Client-side S3 CORS uploader for Amazon S3 using server side defined unique file names and file types using signed upload urls.
 
 ## Bucket settings
-For CORS to work you need to set up your s3 bucket's CORS Configuration to:
+You will need to set up your s3 bucket's CORS Configuration to:
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
@@ -14,6 +14,26 @@ For CORS to work you need to set up your s3 bucket's CORS Configuration to:
         <AllowedHeader>*</AllowedHeader>
     </CORSRule>
 </CORSConfiguration>
+```
+
+## Javascript
+``` javascript
+var UniqueS3Uploader = require('./UniqueS3Uploader');
+var signUrl = 'http://yourserver.local/getSignedUrl.php';
+var uploader = new UniqueS3Uploader(signUrl);
+
+var json = JSON.stringify({
+	yourData: 'goes here',
+	yourDate: new Date(),
+	yourCount: count++
+};
+
+// Each call to UniqueS3Uploader#upload will upload the data to the same unique file.
+// Create a new UniqueS3Uploader to get a new unique uri to upload to
+uploader.upload(json), function(error, data) {
+	if (error) return console.log(error);
+	console.log('Uploaded: ' + data.uri);
+});
 ```
 
 ## PHP Example
