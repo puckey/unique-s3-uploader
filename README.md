@@ -1,5 +1,5 @@
 # unique-s3-uploader
-Upload files with unique filenames from the client directly to an Amazon S3 bucket
+Client-side S3 CORS uploader for Amazon S3 using server side defined unique file names and file types using signed upload urls.
 
 ### License
 
