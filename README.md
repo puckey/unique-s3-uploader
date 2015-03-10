@@ -26,9 +26,8 @@ var uploader = new UniqueS3Uploader(signUrl);
 
 var json = JSON.stringify({
 	yourData: 'goes here',
-	yourDate: new Date(),
-	yourCount: count++
-};
+	yourDate: new Date()
+});
 
 // Each call to UniqueS3Uploader#upload will upload the data to the same unique file.
 // Create a new UniqueS3Uploader to get a new unique uri to upload to
