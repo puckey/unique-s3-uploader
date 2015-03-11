@@ -1,6 +1,6 @@
 {
   "name": "unique-s3-uploader",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Upload files with unique filenames from the client to Amazon S3",
   "repository": {
     "url": "https://github.com/studiomoniker/unique-s3-uploader"
