@@ -20,7 +20,6 @@ You will need to set up your s3 bucket's CORS Configuration to:
 
 ## Javascript
 ``` javascript
-var UniqueS3Uploader = require('./UniqueS3Uploader');
 var signUrl = 'http://yourserver.local/getSignedUrl.php';
 var uploader = new UniqueS3Uploader(signUrl);
 
@@ -39,12 +38,6 @@ uploader.upload(json), function(error, data) {
 
 ## PHP Example
 PHP example is provided for generating of unique filenames and signed upload urls.
-
-To run it:
-```
-npm install
-gulp example
-```
 
 Set up your aws settings in:
 ```

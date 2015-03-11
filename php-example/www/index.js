@@ -1,5 +1,3 @@
-var UniqueS3Uploader = require('../../UniqueS3Uploader');
-
 var uploader = new UniqueS3Uploader('getSignedUrl.php');
 
 var count = 0;
