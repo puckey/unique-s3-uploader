@@ -5,8 +5,10 @@ error_reporting(E_ALL | E_STRICT);  # ...but do log them
 $settings = parse_ini_file('../settings.ini');
 
 function getUniqueUri($fileSuffix) {
-  // Create a unique id in the form of 2015_0310_1136_58_eab01d96 (year_monthday_hourminute_second_randomizedstring)
-  $uid = date_format(date_create(), 'Y_md_Hi_s_').bin2hex(openssl_random_pseudo_bytes(4));
+  $future = 2524604400000;// strtotime("2050/01/01") * 1000;
+  $now = (int) (microtime(true) * 1000);
+  $diff = $future - $now;
+  $uid = $diff.'-'.bin2hex(openssl_random_pseudo_bytes(4));
   return "$uid.$fileSuffix";
 }
 
